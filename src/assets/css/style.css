@@ -1,0 +1,339 @@
+body{
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+nav{
+  height: 80px;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  left: 0;
+  z-index: 100;
+}
+.logo{
+	margin: 0 10px;
+}
+.shapka{
+  background-color: #050710;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-nav{
+	padding: 0;
+	margin: 0;
+}
+.main-nav li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 20px;
+}
+.main-nav li:last-child{
+	margin-right: 0;
+}
+.main-nav li a{
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+	position: relative;
+}
+.main-nav li a:before{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background-color: #6100FF;
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	transition: all .3s ease;
+}
+.main-nav .active-page a:before{
+	width: 100%;
+}
+.lang button{
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+}
+.lang button.active-lang{
+	border-bottom: 2px #6100FF solid;
+}
+.get-contact{
+	font-size: 16px;
+	color: #fff;
+	font-weight: 700;
+	background-color: #6100FF;
+	border: none;
+	padding: 20px 40px;
+	height: 100%;
+}
+#main{
+	height: 100vh;
+	/*background-image: url(../img/mainbg.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;*/
+	position: relative;
+	overflow:hidden;
+}
+.bg-space{
+	position: absolute;
+	z-index: -1;
+	width: 110vw;
+	height: 110vh;
+}
+#main .container{
+	height: 100%;
+}
+#main .row{
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+h1{
+	color: #fff;
+	font-weight: 800;
+	font-size: 92px;
+}
+span.violetter{
+	color: #6100FF;
+/*	text-shadow: 0px 4px 23px rgba(0, 0, 0, 0.72);*/
+}
+.planet{
+	position: relative;
+}
+.planet-img{
+	width: 70%;
+}
+.orion1{
+	position: absolute;
+	top: -21%;
+	left: 0;
+	width: 100%;
+	-webkit-animation: helo 120s infinite reverse linear;
+    animation: helo 120s infinite reverse linear;
+}
+.orion2{
+	position: absolute;
+	left: 10%;
+	top: -8%;
+	width: 80%;
+}
+h2{
+	font-size: 65px;
+	font-weight: 800;
+	color: #050710;
+	margin-bottom: 40px;
+}
+#about{
+	padding: 120px 0;
+}
+.black-txt{
+	font-size: 18px;
+	color: #050710;
+	font-weight: 400;
+	margin-bottom: 40px;
+}
+.main-btn{
+	background-color: #6100FF;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	border:none;
+	border-radius: 5px;
+	padding: 22px 70px;
+}
+#services{
+	padding: 120px 0;
+/*	background-image: url(../img/mainbg.png);*/
+position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.white-txt{
+	font-size: 14px;
+	font-weight: 400;
+	color: #fff;
+}
+.read-more{
+	font-size: 18px;
+	color: #fff;
+	border: none;
+	background-color: transparent;
+	font-weight: 600;
+	width: 100%;
+	text-align: left;
+	padding: 0;
+}
+#cases{
+	padding: 120px 0;
+}
+.case-row{
+	margin-bottom: 70px;
+}
+footer{
+	padding: 80px 0 30px 0;
+	background-image: url(../img/footerbg.png);
+	background-position: center bottom; 
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+h5{
+	font-size: 35px;
+	color: #fff;
+	font-weight: 700;
+}
+.progress-bar{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left:0;
+	height: 4px;
+	background-color: #6100ff;
+	width: 50%;
+	transition: all 0.2s ease;
+}
+.icon-circle{
+	background-color: #6100FF;
+	border-radius: 50px;
+	height: 75px;
+	width: 75px;
+	position: absolute;
+	top: -38px;
+	left: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.contacts{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.contacts img{
+	margin-right: 10px;
+	transform:translateY(-2px);
+}
+.contacts a{
+	color: #fff;
+	font-size: 16px; 
+	transition: all .3s ease;
+}
+.follow-us{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.overhidden{
+	overflow: hidden;
+}
+
+/*ADAPTIIIIIIIIIV*/
+
+
+@media (max-width: 1199px) {
+	
+}
+@media (max-width: 991px) {
+	
+}
+@media (max-width: 786px) {
+	#services{
+		background-attachment: scroll;
+	}
+	footer{
+		background-attachment: scroll;
+	}
+}
+@media (max-width: 767px) {
+ 	
+}
+@media (max-width: 672px) {
+	
+}
+@media (max-width: 512px) {
+	.contacts{
+		margin-bottom: 20px;
+		justify-content: left!important;
+	}
+	.contacts a{
+		margin-bottom: 5px;
+	}
+	.follow-us{
+		margin-bottom: 20px;
+	}
+	#main{
+		background-image: url(../img/mainbg.png);
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	#main .row{
+		display: block;
+	}
+	#main h1{
+		text-align: center;
+		
+		margin:0;
+	}
+	#main .overhidden{
+		margin-bottom: 30%;
+		margin-top: 40%;
+		height: 220px;
+	}
+	h1{
+		font-size: 60px;
+	}
+	nav{
+		position: fixed;
+		top: 0;
+		background-color: #050710;
+	}
+
+}
+@media (max-width: 390px) {
+	
+}
+@media (max-width: 320px) {
+	
+}
+
+
+
+
+
+/* Remove outline on the forms and links */ 
+:active, :hover, :focus { 
+outline: 0; 
+outline-offset: 0; 
+}
+
+button:active, button:hover, button:focus { 
+outline: 0; 
+outline-offset: 0; 
+}
+
+
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+a:focus{
+	text-decoration: none;
+}
+
+
