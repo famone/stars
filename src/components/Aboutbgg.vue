@@ -4,7 +4,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
-					<img src="../assets/img/abtel.jpf" class="ipad">
+					<img src="../assets/img/abtel.png" class="ipad">
 				</div>
 				<div class="col-lg-6">
 					<div class="overhidden">
