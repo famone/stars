@@ -31,6 +31,8 @@ export default new VueRouter({
 			component: Contacts
 		}
 	],
-	mode: 'history'
+	mode: 'history',
 })
+
+
 

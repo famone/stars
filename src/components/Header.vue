@@ -31,8 +31,8 @@
              <button class="active-lang">EN</button>
              <button>CZ</button>
            </div>
-           <button class="get-contact d-none d-sm-block">Get contact</button>
-           <div @click="openMobile()" :class="{acnav: mobileMenu}" class="mobile-nav ac-nav d-block d-xl-none d-lg-none d-md-none">
+  <button class="get-contact d-none d-sm-block" @click="$emit('openPop')"><span>Get contact</span></button>
+  <div @click="openMobile()" :class="{acnav: mobileMenu}" class="mobile-nav ac-nav d-block d-xl-none d-lg-none d-md-none">
              <span></span>
              <span></span>
            </div>
@@ -57,6 +57,11 @@
             <a>Contacts</a>
           </router-link>
         </ul>
+        <div class="menu-contacts">
+            <a href="mailto:hello@strsmedia.com"> <img src="../assets/img/mailic.svg">hello@strsmedia.com</a>
+            <a href="tel:+4234-222-23-23"> <img src="../assets/img/telic.svg">+4234-222-23-23</a>
+          </div>
+        <button class="get-contact" @click="$emit('openPop')"><span>Get contact</span></button>
     </div> 
   </div>
 </template>
@@ -116,6 +121,11 @@
    display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+.mobile-menu .get-contact{
+  width: 80%;
 }
 .mobile-menu ul{
   margin: 0;
@@ -148,5 +158,19 @@
 }
 .logo img{
   height: 40px;
+}
+.menu-contacts{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.menu-contacts img{
+  margin-right: 6px;
+}
+.menu-contacts a{
+  text-align:center;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 </style>

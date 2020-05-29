@@ -6,13 +6,13 @@
 
 
   <appPrld :disable="disable"></appPrld>
+  <appModal :class="{acPop: modalActive}" @close="modalActive = !modalActive"></appModal>
 
-      <appHeader></appHeader>
+      <appHeader @openPop="modalActive = !modalActive"></appHeader>
 
-<transition name="router-anim" leave-active-class="animated fadeOutRight" enter-active-class="animated fadeInLeft" mode="out-in">
-  <router-view></router-view>
-</transition>
-
+<vue-page-transition name="overlay-down-full">  
+    <router-view></router-view>
+</vue-page-transition>
       <appFooter></appFooter>
 
   </div>
@@ -23,20 +23,24 @@ import './assets/css/style.css';
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Preloader from './components/Preloader.vue'
+import Modal from './components/Modal.vue'
 
 import baffle from 'baffle';
 
 export default {
+ 
   components: {
     'appHeader':  Header,
     'appFooter': Footer,
-    'appPrld': Preloader
+    'appPrld': Preloader,
+    'appModal': Modal
   },
   data(){
     return {
       progressBar: 0,
       n: 0,
-      disable: true
+      disable: true,
+      modalActive: false
     }
   },
   methods: {
@@ -65,12 +69,9 @@ export default {
       setTimeout(() => {
         this.disable = !this.disable
       }, 2000);
-     },
-     moveAlert(){
-      alert('aasf;kn')
      }
   },
- created(){
+  created(){
     window.addEventListener('scroll', ()=>{
       let pageHeight = document.documentElement.scrollHeight;
       let monitor = document.documentElement.clientHeight;
@@ -80,13 +81,16 @@ export default {
       this.progressBar = percents;
       // console.log(this.progressBar)
     });
-    console.log(this.n)
+    // console.log(this.$root.loading)
     this.startInterval();
     this.disablePreloader()
   }
 }
 </script>
 
-<style scoped>
-
+<style>
+:root {
+  --overlay-bg: #050710;
+  --transition-duration: .3s;
+  }
 </style>

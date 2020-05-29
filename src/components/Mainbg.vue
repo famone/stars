@@ -1,5 +1,6 @@
 <template>
 	<section id="main" refs="page">
+    <img src="../assets/img/mouse.svg" class="scroll-mouse">
     <img src="../assets/img/mainbg.png" class="bg-space d-none d-sm-block">
       <div class="container">
         <div class="row">
@@ -33,7 +34,26 @@
 </script>
 
 <style scoped>
-
+.scroll-mouse{
+  position: absolute;
+  width: 40px;
+  z-index: 20;
+  bottom: 30px;
+  left: calc(50% - 20px);
+  transition: all .2s ease;
+  animation: floater 3s ease-in-out infinite;
+}
+@keyframes floater{
+  0% {
+    transform: translatey(-20px);
+  }
+  50% {
+      transform: translatey(0px);
+  }
+  100% {
+      transform: translatey(-20px);
+  }
+}
 	.violetter2{
 		text-shadow: 0px 4px 23px rgba(0, 0, 0, 0.55);
     color: #6100ff;

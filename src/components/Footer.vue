@@ -41,13 +41,16 @@
 				<div class="col-lg-6 wow fadeInUp">
 					<div class="contacts">
 						<a href="mailto:hello@strsmedia.com"> <img src="../assets/img/mailic.svg">hello@strsmedia.com</a>
-						<a href="tel:+4234-222-23-23"> <img src="../assets/img/mailic.svg">+4234-222-23-23</a>
+						<a href="tel:+4234-222-23-23"> <img src="../assets/img/telic.svg">+4234-222-23-23</a>
 					</div>
 				</div>
 				<div class="col-lg-3 wow fadeInUp">
-					<a href="https://webink.site/" class="webink">Produced by webink.</a>
+					<a href="https://webink.site/" class="webink"><div>PRODUCED BY - <img src="../assets/img/webink.svg"></div></a>
+				<!-- 	<div class="webink">
+						<span class="text text--dark">CODE BY</span>
+					</div> -->
+					</div>
 				</div>
-			</div>
 		</div>
 	</footer>
 </template>
@@ -84,6 +87,7 @@
 		border-bottom: 2px #fff solid;
 		color: #fff;
 		margin-bottom: 50px;
+		border-radius: 0!important;
 	}
 	input::placeholder{
 		color: #fff;
@@ -121,9 +125,43 @@
 		font-weight: 600;
 		color: #fff;
 	}
-	.webink{
+	.webink div{
 		font-size: 16px;
-		font-weight: 600;
+		font-weight: 400;
 		color: #fff;
+		opacity: .6;
+		transition: all .3s ease;
 	}
+	.webink:hover div{
+		animation: 1s myshake alternate;
+		opacity: 1;
+	}
+	.webink img{
+		 height: 16px;
+		margin-top: -3px;
+	}
+
+
+@keyframes myshake{
+	0% {
+	    transform: skewX(-15deg);
+	}
+	5% {
+	    transform: skewX(15deg);
+	}
+	10% {
+	    transform: skewX(-15deg);
+	}
+	15% {
+	    transform: skewX(15deg);
+	}
+	20% {
+	    transform: skewX(0deg);
+	}
+	100% {
+	    transform: skewX(0deg);
+	}
+}
+
+
 </style>

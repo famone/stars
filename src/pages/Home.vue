@@ -28,6 +28,11 @@ export default{
     'appAbout': Aboutbg,
     'appServ': Servbg,
     'appCases': Casesbg
+  },
+  data(){
+  	return {
+  		react: false
+  	}
   }
 }
 

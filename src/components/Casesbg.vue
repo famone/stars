@@ -1,5 +1,7 @@
 <template>
 	<section id="cases">
+		<img src="../assets/img/floatplanet.svg" class="floatplanet d-none d-sm-none d-lg-block">
+		<img src="../assets/img/floatplanet.svg" class="floatplanet2 d-none d-sm-none d-lg-block">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 overhidden">
@@ -7,13 +9,13 @@
 				</div>
 			</div>
 
-			<div class="row case-row" v-for="caseItem in cases">
+			<div class="row case-row" v-for="caseItem in cases.slice(0, 2)">
 				<div class="col-lg-6">
 					<div class="case-over">
 						<div class="case-card wow" data-wow-delay=".2s">
-							<img :src="caseItem.logo" class="logo-case wow fadeIn" data-wow-delay=".8s">
 							<div class="case-img wow" data-wow-delay=".8s"
 							 :style="{'background-image': 'url(' + caseItem.image + ')'}">
+							 <img :src="caseItem.logo" class="logo-case wow fadeIn" data-wow-delay=".8s">
 							</div>
 						</div>
 					</div>
@@ -30,7 +32,9 @@
 
 			<div class="row">
 				<div class="col-lg-12">
-					<button class="main-btn">SHOW ALL CASES</button>
+					<router-link tag="a" to="/cases">
+						<button class="main-btn"><span>SHOW ALL CASES</span></button>
+					</router-link>
 				</div>
 			</div>
 
@@ -42,125 +46,45 @@
 	export default{
 		data(){
 			return{
-				cases: [
-					{
-						sphere: 'CASINO',
-						name: 'Kings Resort',
-						descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
-						hashTags: ['Marketing', 'Video making', 'SEO'],
-						image: require('../assets/img/kingcase.png'),
-						logo: require('../assets/img/kingslogo.svg')
-
-					},
-					{
-						sphere: 'CYBER TEAM',
-						name: 'Entropiq',
-						descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
-						hashTags: ['Marketing', 'Video making'],
-						image: require('../assets/img/kingcase.png'),
-						logo: require('../assets/img/entrologo.svg')
-
-					}
-				]
+				cases: null
 			}
+		},
+		mounted(){
+			const scene2 = this.$scrollmagic.scene({
+				triggerElement: '#services',
+			    triggerHook: 0,
+			    duration: '100%'
+			})
+
+			.setTween('.floatplanet', { 
+		      css: { 
+		        transform: 'rotate(30deg)',
+		        top: '5%'
+		      }
+		    })
+
+		    this.$scrollmagic.addScene(scene2)
+		},
+		created(){
+			this.cases = this.$store.getters.getCases
 		}
+
 	}
 </script>
 
 <style>
 
-@keyframes caseheigh {
-	from{
-		padding: 0px;
-		height: 0%;
-	}
-	to{
-		padding: 20px;
-		height: 100%;
-	}
-}
-
-@keyframes zoomout {
-	from{
-		opacity: 0;
-		transform: scale(1.1);
-	}
-	to{
-		opacity: 1;
-		transform: scale(1);
-	}
-}
-
-/**/
-
-
-.case-over{
-	height: 340px;
-	width: 100%;
-	margin-bottom: 20px;
-	position: relative;
-}
-.case-card{
-	background-color: #05070f;
-	overflow:hidden;
-	padding: 0;
-	height: 0;
-	animation:caseheigh .5s forwards;
-	transition: all .3s ease;
-}
-.case-img{
-	width: 100%;
-	height: 300px;
-	border-radius: 5px;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	animation: zoomout .5s forwards;
-	transition: all .3s ease;
-	opacity: 0;
-		transform: scale(1.1);
-}
-.logo-case{
+.floatplanet{
 	position: absolute;
-	z-index: 10;
-	left:-35px;
-	top: 25%;
+	left: -12%;
+	top: -15%;
+	height: 400px;
+	transform: rotate(0);
 }
-.black-txt{
-	font-size: 16px;
-	margin-bottom: 20px;
-}
-.case-sphere{
-	margin-bottom: 0;
-	color: #6100FF;
-	font-size: 22px;
-	font-weight: 400;
-}
-h3{
-	font-size: 45px;
-	color: #050710;
-	font-weight: 700;
-	margin-bottom: 20px;
-	margin-top: 0;
-}
-.hastags{
-	display: flex;
-	justify-content: left;
-	align-items: center;
-	flex-wrap: wrap;
-}
-.hash{
-	color: #050710;
-	font-size: 16px;
-	font-weight: 700;
-	padding: 5px 10px;
-	background-color: #E2E7E5;
-	border-radius: 5px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-.hash span{
-	color: #6100FF;
+.floatplanet2{
+	position: absolute;
+	right: -10%;
+	bottom: -10%;
+	height: 400px;
 }
 </style>

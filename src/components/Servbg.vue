@@ -14,21 +14,18 @@
 						</div>
 						<h4>{{ service.title }}</h4>
 						<p class="white-txt">{{ service.descr }}</p>
-						<a href=""><button class="read-more">READ MORE</button></a>
+						<a href=""><button class="read-more">READ MORE<img src="../assets/img/arrow.svg"></button></a>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<router-link tag="a" to="/services">
-            			<button class="main-btn">SHOW ALL SERVICES</button>
+            			<button class="main-btn"><span>SHOW ALL SERVICES</span></button>
           			</router-link>
 				</div>
 			</div>
 		</div>
-		<video autoplay muted loop id="myVideo">
-		  <source src="https://static.nimax.ru/hello/hello.h264.mp4" type="video/mp4">
-		</video>
 	</section>
 </template>
 
@@ -81,11 +78,5 @@
 	.main-btn{
 		margin-top: 20px;
 	}
-	#myVideo{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width:100%;
-		z-index: -1;
-	}
+
 </style>
