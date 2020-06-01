@@ -9,6 +9,7 @@ import store from './store'
 import VuePageTransition from 'vue-page-transition'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueTilt from 'vue-tilt.js'
+import VueLazyload from 'vue-lazyload'
 
 import 'swiper/css/swiper.css'
 
@@ -19,6 +20,13 @@ Vue.use(VueScrollmagic)
 Vue.use(VueTilt)
 Vue.use(Particles)
 Vue.use(VueRouter)
+
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'dist/error.png',
+  loading: 'dist/loading.gif',
+  attempt: 1
+})
 
 
 new Vue({

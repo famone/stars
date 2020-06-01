@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = {
   entry: './src/main.js',
@@ -73,6 +74,11 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new ImageminPlugin({
+      pngquant: {
+        quality: '60'
+      }
     })
   ])
 }

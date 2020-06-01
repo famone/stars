@@ -1,7 +1,7 @@
 <template>
 	<section id="main" refs="page">
     <img src="../assets/img/mouse.svg" class="scroll-mouse">
-    <img src="../assets/img/mainbg.png" class="bg-space d-none d-sm-block">
+    <img v-lazy="require('../assets/img/mainbg.png')" class="bg-space d-none d-sm-block">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -13,9 +13,9 @@
           </div>
           <div class="col-lg-6">
             <div class="planet text-center wow fadeInRight">
-              <img src="../assets/img/lpanet.png" class="planet-img">
-              <img src="../assets/img/big-orion.svg" class="orion1">
-              <img src="../assets/img/smallorion.svg" class="orion2">
+              <img v-lazy="require('../assets/img/lpanet.png')" class="planet-img">
+              <img v-lazy="require('../assets/img/big-orion.svg')" class="orion1">
+              <img v-lazy="require('../assets/img/smallorion.svg')" class="orion2">
             </div>
           </div>
         </div>
