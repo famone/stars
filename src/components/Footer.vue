@@ -1,5 +1,6 @@
 <template>
 	<footer>
+		<div class="footer-overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 overhidden">
@@ -16,10 +17,10 @@
 					<div class="col-lg-4 wow fadeInUp">
 						<input type="text" placeholder="Your e-mail">
 					</div>
-					<div class="col-lg-6 wow fadeInUp">
-						<input type="text" placeholder="Services?">
+					<div class="col-lg-12 wow fadeInUp">
+						<input type="text" placeholder="What services are you looking for?">
 					</div>
-					<div class="col-lg-3 wow fadeInUp">
+					<div class="col-lg-3 offset-lg-3 offset-md-3 wow fadeInUp">
 						<button type="submit" class="sbm-btn"><img src="../assets/img/mailic.svg" alt="">Submit</button>
 					</div>
 					<div class="col-lg-3 wow fadeInUp">
@@ -45,7 +46,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3 wow fadeInUp">
-					<a href="https://webink.site/" class="webink"><div>PRODUCED BY - <img src="../assets/img/webink.svg"></div></a>
+					<a href="https://webink.site/" class="webink"><div>coding masters - <img src="../assets/img/webink.svg"></div></a>
 				<!-- 	<div class="webink">
 						<span class="text text--dark">CODE BY</span>
 					</div> -->
@@ -79,6 +80,15 @@
 </script>
 
 <style scoped>
+.footer-overlay{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
 	input{
 		width: 100%;
 		padding: 13px 0;
@@ -126,11 +136,12 @@
 		color: #fff;
 	}
 	.webink div{
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 400;
 		color: #fff;
-		opacity: .6;
+		opacity: 1;
 		transition: all .3s ease;
+		font-family: 'Roboto Mono', monospace;
 	}
 	.webink:hover div{
 		animation: 1s myshake alternate;
@@ -138,6 +149,9 @@
 	}
 	.webink img{
 		 height: 16px;
+		margin-top: -3px;
+	}
+	.webink:hover img{
 		margin-top: -3px;
 	}
 

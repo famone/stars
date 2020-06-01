@@ -5,7 +5,7 @@ export default{
 						sphere: 'CASINO',
 						name: 'King’s Resort',
 						descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
-						hashTags: ['Marketing', 'Live streaming'],
+						hashTags: ['Live streaming'],
 						image: require('../assets/img/kingcase.png'),
 						logo: require('../assets/img/kingslogo.svg')
 

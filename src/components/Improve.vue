@@ -54,8 +54,8 @@
 			const scene5 = this.$scrollmagic.scene({
 				triggerElement: '#aboutbg2',
 			    triggerHook: 0,
-			    offset: '80%',
-			    duration: '90%'
+			    offset: '90%',
+			    duration: '100%'
 			})
 
 			.setTween('.devider', { 
@@ -72,7 +72,7 @@
 <style scoped>
 #improve{
 	background-color: #161616;
-	padding: 80px 0;
+	padding: 120px 0;
 }
 h2{
 	color: #fff;

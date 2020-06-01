@@ -6,13 +6,18 @@
 
 
   <appPrld :disable="disable"></appPrld>
+
+
+
   <appModal :class="{acPop: modalActive}" @close="modalActive = !modalActive"></appModal>
 
       <appHeader @openPop="modalActive = !modalActive"></appHeader>
 
+
 <vue-page-transition name="overlay-down-full">  
     <router-view></router-view>
 </vue-page-transition>
+
       <appFooter></appFooter>
 
   </div>
@@ -20,6 +25,7 @@
 
 <script>
 import './assets/css/style.css';
+
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Preloader from './components/Preloader.vue'
@@ -79,10 +85,8 @@ export default {
 
       let percents = Math.round(done / (pageHeight - monitor) * 100);
       this.progressBar = percents;
-      // console.log(this.progressBar)
-    });
-    // console.log(this.$root.loading)
-    this.startInterval();
+    })
+    this.startInterval()
     this.disablePreloader()
   }
 }
@@ -91,6 +95,6 @@ export default {
 <style>
 :root {
   --overlay-bg: #050710;
-  --transition-duration: .3s;
-  }
+  --transition-duration: .2s;
+}
 </style>

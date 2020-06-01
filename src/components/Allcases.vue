@@ -1,10 +1,9 @@
 <template>
 		<section id="cases">
 			<div class="container">
-				<div class="row case-row" v-for="caseItem in cases" v-if="caseItem.hashTags.includes(changeFilter) || changeFilter == 'All' ">
-					<!-- v-if="caseItem.hashTags.includes(n) || n == 'All' " -->
-					<div class="col-lg-6">
-						<div class="case-over">
+				<div class="row case-row">
+					<div class="col-lg-4 col-sm-6 col-md-6" v-for="caseItem in cases" v-if="caseItem.hashTags.includes(changeFilter) || changeFilter == 'All' ">
+						<div class="case-over" v-tilt="{speed: 1000, perspective: 1200}">
 							<div class="case-card" >
 								<div class="case-img"
 								 :style="{'background-image': 'url(' + caseItem.image + ')'}">
@@ -12,11 +11,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-6">
-						<p class="case-sphere">{{ caseItem.sphere }}</p>
-						<h3>{{ caseItem.name }}</h3>
-						<p class="black-txt">{{ caseItem.descr }}</p>
+						
+							<h3>{{ caseItem.name }}</h3>
 						<div class="hastags">
 							<div class="hash" v-for="hash in caseItem.hashTags"><span>#</span>{{ hash }}</div>
 						</div>
@@ -50,5 +46,16 @@
 <style scoped>
 #cases{
 	padding: 30px 0;
+}
+h3{
+	font-size: 30px;
+}
+.hastags{
+	margin-bottom: 20px;
+}
+.logo-case{
+	transform: translateZ(40px);
+	max-width: 80%;
+	transform: translateZ(20px);
 }
 </style>

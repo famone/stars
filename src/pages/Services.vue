@@ -1,26 +1,33 @@
 <template>
-	<section class="text-center">
-		<div>
-			<h2>Services page</h2>
-		<p class="black-txt">
-			Sorry! Under Construction...
-		</p>
-		</div>
-	</section>
+	<div>
+		<appInner :pageTitle="pageTitle" :pageBg="pageBg"></appInner>
+		<appServperfom></appServperfom>
+		<appServgraph></appServgraph>
+	</div>
+
 </template>
 
 <script>
-	export default{
+import Inner from '../components/Inner.vue'	
+import Servperfom from '../components/Servperfom.vue'
+import Servgraph from '../components/Servgraph.vue'
 
+	export default{
+		components: {
+			'appInner': Inner,
+			'appServperfom': Servperfom,
+			'appServgraph': Servgraph
+
+		},
+		data(){
+			return{
+				pageTitle: 'Our services',
+				pageBg: require('../assets/img/mooninner.jpg')
+			}
+		}
 	}
 </script>
 
 <style scoped>
-	section{
-		height: 100vh;
-		width: 100vw;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+	
 </style>

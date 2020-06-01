@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-lg-6">
               <div class="overhidden">
-                <h1 class="wow fadeInUp" data-wow-delay="1.6s">We are <br>
+                <h1 class="wow fadeIn">We are <br>
                 <span class="violetter2 buff">innovative</span> <br>
                 marketing</h1>
               </div>

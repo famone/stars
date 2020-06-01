@@ -11,10 +11,10 @@
 					<div class="col-lg-4">
 						<input type="text" placeholder="Your e-mail">
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-12">
 						<input type="text" placeholder="Services?">
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 offset-md-3 offset-lg-3">
 						<button type="submit" class="sbm-btn"><img src="../assets/img/mailic.svg" alt="">Submit</button>
 					</div>
 					<div class="col-lg-3">
