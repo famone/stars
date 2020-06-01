@@ -30,7 +30,6 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Preloader from './components/Preloader.vue'
 import Modal from './components/Modal.vue'
-
 import baffle from 'baffle';
 
 export default {
