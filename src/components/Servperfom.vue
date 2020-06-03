@@ -77,6 +77,7 @@
 				swiperOptions: {
 			        slidesPerView: 1,
 			      spaceBetween: 0,
+			      draggable: true,
 			      loop: true,
 			          navigation: {
 			            nextEl: '.swiper-button-next',
@@ -152,8 +153,5 @@ h2{
 	justify-content: left;
 	align-items: center;
 	padding: 25px 0;
-}
-.slider2{
-	margin-top: -135px;
 }
 </style>

@@ -41,8 +41,8 @@
 				</div>
 				<div class="col-lg-6 wow fadeInUp">
 					<div class="contacts">
-						<a href="mailto:hello@strsmedia.com"> <img src="../assets/img/mailic.svg">hello@strsmedia.com</a>
-						<a href="tel:+4234-222-23-23"> <img src="../assets/img/telic.svg">+4234-222-23-23</a>
+						<a :href="`mailto:${email}`"> <img src="../assets/img/mailic.svg">{{ email }}</a>
+						<a :href="`tel:${telephone}`"> <img src="../assets/img/telic.svg">{{ telephone }}</a>
 					</div>
 				</div>
 				<div class="col-lg-3 wow fadeInUp">
@@ -73,8 +73,14 @@
 						link: '#',
 						icon: require('../assets/img/vimeo.svg')
 					}
-				]
+				],
+				telephone: null,
+				email: null
 			}
+		},
+		mounted(){
+			this.telephone = this.$store.getters.getTel
+			this.email = this.$store.getters.getMail
 		}
 	}
 </script>
@@ -113,10 +119,14 @@
 		color: #fff;
 		border-radius: 5px;
 		margin-bottom: 20px;
+		transition: all .3s ease;
 	}
 	.sbm-btn img{
 		margin-right: 6px;
 		transform: translateY(-2px);
+	}
+	.sbm-btn:hover{
+		box-shadow: 0 5px 20px rgba(255,255,255,.3);
 	}
 	.white-txt{
 		font-size: 16px;

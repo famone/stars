@@ -2,7 +2,22 @@
 	<section id="serv2">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-7">
+					<div class="col-lg-5 order-lg-2">
+						<swiper ref="mySwiper3" :options="swiperOptions" class="slider2 wow fadeIn">
+						    <swiper-slide v-for="servIm in servImg" class="text-center">
+						    	<img :src="servIm.img" class="serv-image">
+						    </swiper-slide>
+	  					</swiper>
+	  						<div class="mynav2">
+	  							<div class="swiper-button-prev" slot="button-prev"></div>
+								<div class="swiper-button-next" slot="button-next"></div>
+	  						</div>
+	  					 <div class="examples text-right">
+	  					 	<button class="main-btn"><span>SEE EXAMPLES</span></button>
+	  					 </div>
+					</div>
+
+					<div class="col-lg-7 order-lg-1">
 						<div class="overhidden">
 							<h2 class="wow fadeInDown">Perfomance marketing</h2>
 						</div>
@@ -23,22 +38,6 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="col-lg-5">
-						<swiper ref="mySwiper3" :options="swiperOptions" class="slider2 wow fadeIn">
-						    <swiper-slide v-for="servIm in servImg" class="text-center">
-						    	<img :src="servIm.img" class="serv-image">
-						    </swiper-slide>
-	  					</swiper>
-	  						<div class="mynav2">
-	  							<div class="swiper-button-prev" slot="button-prev"></div>
-								<div class="swiper-button-next" slot="button-next"></div>
-	  						</div>
-	  					 <div class="examples text-right">
-	  					 	<button class="main-btn"><span>SEE EXAMPLES</span></button>
-	  					 </div>
-					</div>
-
 				</div>
 			</div>
 		</section>
@@ -77,6 +76,7 @@
 				swiperOptions: {
 			        slidesPerView: 1,
 			      spaceBetween: 0,
+			      draggable: true,
 			      loop: true,
 			          navigation: {
 			            nextEl: '.mynav2 .swiper-button-next',
@@ -161,8 +161,5 @@ h2{
 	justify-content: left;
 	align-items: center;
 	padding: 25px 0;
-}
-.slider2{
-	margin-top: -135px;
 }
 </style>

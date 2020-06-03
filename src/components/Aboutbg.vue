@@ -19,7 +19,9 @@
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta 
             </p>
             </div>
-            <button class="main-btn"><span>OUR TEAM</span></button>
+            <router-link tag="a" to="/about">
+                <button class="main-btn"><span>OUR TEAM</span></button>
+            </router-link>
           </div>
         </div>
       </div>

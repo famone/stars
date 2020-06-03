@@ -13,7 +13,7 @@ export default{
 					{
 						sphere: 'CYBER TEAM',
 						name: 'Entropiq',
-						descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
+						descr: 'Lorem ipsum dollor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
 						hashTags: ['Marketing', 'Video making'],
 						image: require('../assets/img/entropiqcase.png'),
 						logo: require('../assets/img/entrologo.svg')

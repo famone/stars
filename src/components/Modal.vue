@@ -1,6 +1,6 @@
 <template>
-	<div class="pop">
-		<div class="close-pop" @click="$emit('close')">✕</div>
+	<div class="pop" :class="{acPop: modalComp}">
+		<div class="close-pop" @click="hideModal()">✕</div>
 		<div class="pop-box row">
 			<div class="col-lg-4">
 						<input type="text" placeholder="What is your name">
@@ -27,7 +27,16 @@
 
 <script>
 	export default{
-		props: ['modalActive']
+		computed: {
+			modalComp(){
+				return this.$store.getters.getModal
+			} 
+		},
+		methods: {
+			hideModal(){
+				this.$store.dispatch('setModal', false)
+			}
+		}
 	}
 </script>
 
@@ -87,10 +96,14 @@ input::placeholder{
 	color: #fff;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	transition: all .3s ease;
 }
 .sbm-btn img{
 	margin-right: 6px;
 	transform: translateY(-2px);
+}
+.sbm-btn:hover{
+	box-shadow: 0 5px 20px rgba(255,255,255,.3);
 }
 .white-txt{
 	font-size: 16px;

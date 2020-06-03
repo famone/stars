@@ -271,6 +271,10 @@ h5{
 	justify-content: center;
 	align-items: center;
 }
+.icon-circle img{
+	width: 35px;
+	height: 35px;
+}
 .contacts{
 	display: flex;
 	justify-content: space-around;
@@ -463,11 +467,25 @@ h3{
 	border-radius: 10px;
 	width: 100%;
 }
+.slider2{
+	margin-top: -135px;
+}
+#contacts{
+	/*height: 760px;*/
+	padding: 200px 0;
+	position:relative;
+}
+
+
+
+
 /*ADAPTIIIIIIIIIV*/
 
 
 @media (max-width: 1199px) {
-	
+	.slider2{
+		margin-top:0;
+	}
 }
 @media (max-width: 991px) {
 	
@@ -487,6 +505,12 @@ h3{
 	
 }
 @media (max-width: 512px) {
+	#contacts{
+		height: inherit;
+	}
+	.slider2{
+		margin-top: 0;
+	}
 	.filter-cases{
 		display: flex;
 		overflow:scroll;

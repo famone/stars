@@ -31,7 +31,7 @@
              <button class="active-lang">EN</button>
              <button>CZ</button>
            </div>
-  <button class="get-contact d-none d-sm-block" @click="$emit('openPop')"><span>Get contact</span></button>
+  <button class="get-contact d-none d-sm-block" @click="showModal()"><span>Get contact</span></button>
   <div @click="openMobile()" :class="{acnav: mobileMenu}" class="mobile-nav ac-nav d-block d-xl-none d-lg-none d-md-none">
              <span></span>
              <span></span>
@@ -61,7 +61,7 @@
             <a href="mailto:hello@strsmedia.com"> <img src="../assets/img/mailic.svg">hello@strsmedia.com</a>
             <a href="tel:+4234-222-23-23"> <img src="../assets/img/telic.svg">+4234-222-23-23</a>
           </div>
-        <button class="get-contact" @click="$emit('openPop')"><span>Get contact</span></button>
+        <button class="get-contact" @click="showModal()"><span>Get contact</span></button>
     </div> 
   </div>
 </template>
@@ -77,9 +77,12 @@
     methods: {
       openMobile(){
         this.mobileMenu = !this.mobileMenu
+      },
+      showModal(){
+        this.$store.dispatch('setModal', true)
       }
     },
-    mounted(){
+    mounted(){ 
       if( screen.width <= 760 ) {
         this.logoImg = require('../assets/img/newlogo.svg')
       }

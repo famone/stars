@@ -16,7 +16,9 @@
 						</div>
 						<h4>{{ service.title }}</h4>
 						<p class="white-txt">{{ service.descr }}</p>
-						<a href=""><button class="read-more">READ MORE<img src="../assets/img/arrow.svg"></button></a>
+						<router-link tag="a" to="/services#serv2">
+							<button class="read-more">READ MORE<img src="../assets/img/arrow.svg"></button>
+						</router-link>
 					</div>
 				</div>
 			</div>

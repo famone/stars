@@ -35,6 +35,7 @@
 			        slidesPerView: 3,
 			      spaceBetween: 30,
 			      loop: true,
+			      draggable: true,
 			          pagination: {
 			            el: '.swiper-pagination',
 			            clickable: true

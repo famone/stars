@@ -9,7 +9,7 @@
 
 
 
-  <appModal :class="{acPop: modalActive}" @close="modalActive = !modalActive"></appModal>
+  <appModal @close="modalActive = !modalActive"></appModal>
 
       <appHeader @openPop="modalActive = !modalActive"></appHeader>
 
