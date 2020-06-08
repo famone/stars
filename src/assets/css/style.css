@@ -475,6 +475,13 @@ h3{
 	padding: 200px 0;
 	position:relative;
 }
+.h2-icon{
+	transform: translateY(-5px);
+	margin-right: 10px;
+	height: 40px;
+	width: 40px;
+}
+
 
 
 
@@ -505,6 +512,10 @@ h3{
 	
 }
 @media (max-width: 512px) {
+	.shades{
+		height: 100%!important;
+		width: auto!important;
+	}
 	#contacts{
 		height: inherit;
 	}

@@ -46,10 +46,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3 wow fadeInUp">
-					<a href="https://webink.site/" class="webink"><div>coding masters - <img src="../assets/img/webink.svg"></div></a>
-				<!-- 	<div class="webink">
-						<span class="text text--dark">CODE BY</span>
-					</div> -->
+					<a href="https://webink.site/" class="webink"><div>coding master - <img src="../assets/img/webink.svg"></div></a>
 					</div>
 				</div>
 		</div>

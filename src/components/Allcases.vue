@@ -3,6 +3,7 @@
 			<div class="container">
 				<div class="row case-row">
 					<div class="col-lg-4 col-sm-6 col-md-6" v-for="caseItem in cases" v-if="caseItem.hashTags.includes(changeFilter) || changeFilter == 'All' ">
+					<router-link tag="a" :to="/cases/ + caseItem.link">
 						<div class="case-over" v-tilt="{speed: 1000, perspective: 1200}">
 							<div class="case-card" >
 								<div class="case-img"
@@ -11,8 +12,12 @@
 								</div>
 							</div>
 						</div>
+					</router-link>	
 						
+						<router-link tag="a" :to="/cases/ + caseItem.link">
 							<h3>{{ caseItem.name }}</h3>
+						</router-link>	
+
 						<div class="hastags">
 							<div class="hash" v-for="hash in caseItem.hashTags"><span>#</span>{{ hash }}</div>
 						</div>

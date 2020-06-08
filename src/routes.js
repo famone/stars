@@ -4,6 +4,7 @@ import About from './pages/About.vue'
 import Cases from './pages/Cases.vue'
 import Services from './pages/Services.vue'
 import Contacts from './pages/Contacts.vue'
+import Caseitem from './pages/Caseitem.vue'
 
 
 
@@ -29,6 +30,10 @@ export default new VueRouter({
 		{
 			path: '/contacts',
 			component: Contacts
+		},
+		{
+			path: '/cases/:id',
+			component: Caseitem
 		}
 	],
 	mode: 'history',
