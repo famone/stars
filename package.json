@@ -10,6 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "baffle": "^0.3.6",
     "imagemin-webpack-plugin": "^2.4.2",
     "particles.js": "^2.0.0",

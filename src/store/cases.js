@@ -1,3 +1,6 @@
+import axios from 'axios'
+
+
 export default{
 	state: {
 		cases: [
@@ -117,16 +120,30 @@ export default{
 						id: 3
 					}
 				],
-				filteredParam: 'All'
+				filteredParam: 'All',
+				posts: []
 	},
 	mutations: {
 		setFiltered(state, filteredParam){
 			state.filteredParam = filteredParam
+		},
+		SET_POSTS(state, data){
+			state.posts = data
 		}
 	},
   	actions: {
   		setFiltered({commit}, payload){
 			commit('setFiltered', payload)
+		},
+		loadCases({commit}){
+			axios
+				.get('https://stars.webink.site/wp-json/wp/v2/portfolio')
+				.then(res =>{
+					console.log(res.data)
+					
+					commit('SET_POSTS', res.data)
+				})
+				.catch(error => console.log(error))
 		}
   	},
   	getters: {
