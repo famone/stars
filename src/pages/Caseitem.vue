@@ -1,20 +1,21 @@
 <template>
 	<div>
 		<div id="scenecase">
-			<appCaseinner :caseTitle="caseItem.name"
+			<appCaseinner :caseTitle="caseItem.title.rendered"
 			:logo="caseItem.logo"
-			:caseBg="caseItem.background"
+			:caseBg="caseItem.acf.background"
 			:hashs="caseItem.hashTags"
-			:shades="caseItem.shades"
-			:sphere="caseItem.sphere"></appCaseinner>
+			:shades="caseItem.acf.shades.url"
+			:sphere="caseItem.acf.sphere"></appCaseinner>
 
-<appMaintask :maintask="caseItem.mainTask"></appMaintask>
+<appMaintask :maintask="caseItem.acf.mainTask"></appMaintask>
 
 		</div>
-		<appInvolved :involved="caseItem.involvedItems"></appInvolved>
-		<appResults :results="caseItem.results"
-		:resImgs="caseItem.resultsImg"
-		:bigcase="caseItem.bigcase"></appResults>
+		<appInvolved :involved="caseItem.acf.services_and_processes_involved"></appInvolved>
+		<appResults :results="caseItem.acf.results"
+		:resImgs="caseItem.acf.resultsImg"
+		:bigcase="caseItem.acf.bigcase.url"></appResults>
+
 	</div>
 </template>
 
@@ -36,13 +37,18 @@ import Results from '../components/Results.vue'
 		data(){
 			return{
 				pageBg: require('../assets/img/inner1.png'),
-				caseItem: null
+				caseItem: []
+			}
+		},
+		computed: {
+			getRouteCase(){
+				return this.caseItem
 			}
 		},
 		created(){
 			let id = this.$route.params.id
 			 this.caseItem = this.$store.getters.getCaseitem(id)
-			console.log({route: this.$route, id: this.$route.params.id})
+			console.log(this.$route.params.id)
 		}
 	}
 </script>

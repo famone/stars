@@ -9,19 +9,19 @@
 			</div>
 			<form class="form-row overhidden">
 					<div class="col-lg-4 wow fadeInUp">
-						<input type="text" placeholder="What is your name">
+						<input type="text" placeholder="What is your name" v-model="emailBody.yname">
 					</div>
 					<div class="col-lg-4 wow fadeInUp">
-						<input type="text" placeholder="+7 999 222-22-22">
+						<input type="text" placeholder="+7 999 222-22-22" v-model="emailBody.phone">
 					</div>
 					<div class="col-lg-4 wow fadeInUp">
-						<input type="text" placeholder="Your e-mail">
+						<input type="text" placeholder="Your e-mail" v-model="emailBody.email">
 					</div>
 					<div class="col-lg-12 wow fadeInUp">
-						<input type="text" placeholder="What services are you looking for?">
+						<input type="text" placeholder="What services are you looking for?" v-model="emailBody.services">
 					</div>
 					<div class="col-lg-3 offset-lg-3 offset-md-3 wow fadeInUp">
-						<button type="submit" class="sbm-btn"><img src="../assets/img/mailic.svg" alt="">Submit</button>
+						<button type="submit" class="sbm-btn" @click.prevent="submitForm()"><img src="../assets/img/mailic.svg" alt="">Submit</button>
 					</div>
 					<div class="col-lg-3 wow fadeInUp">
 						<p class="white-txt">By clicking the button <br>
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 	export default{
 		data(){
 			return {
@@ -72,13 +73,47 @@
 					}
 				],
 				telephone: null,
-				email: null
+				email: null,
+				emailBody: {
+					yname: '123',
+					phone: '123',
+					email: 'asda@mail.ru',
+					services: 'l;m;evlmw'
+				},
+				errors: [],
+            	url: 'https://stars.webink.site/wp-json/contact-form-7/v1/contact-forms/43/feedback'
 			}
 		},
-		mounted(){
+		methods: {
+        submitForm() {
+        	var form1 = new FormData();
+        	
+        		form1.append('file', this.emailBody);
+			  // for(var pair of formData.entries()) {
+			  //   console.log(pair[0]+ ', '+ pair[1]); 
+			  //  }
+
+ 
+
+			// for (field in this.emailBody){
+			// 	form1.append(field, this.emailBody[field]);
+			// };
+
+            axios
+            	.post(this.url, form1)
+                .then((response) => {
+                    console.log(response);
+                    this.errors = [];
+                })
+                .catch((error) => {
+                    this.errors = error.response.data.message
+                });
+        	}
+    	},
+    	mounted(){
 			this.telephone = this.$store.getters.getTel
 			this.email = this.$store.getters.getMail
-		}
+		},
 	}
 </script>
 

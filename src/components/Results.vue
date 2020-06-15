@@ -6,14 +6,14 @@
 					<h2><img src="../assets/img/cup.svg" class="h2-icon">Results:</h2>
 					<div class="results">
 						<p class="black-txt" v-for="result in results">
-							<img src="../assets/img/smalllight.svg" alt="">{{ result }}</p>
+							<img :src="result.icon.url" alt="">{{ result.text }}</p>
 					</div>
 					<hr>
 					<h6>Check out!</h6>
 
 					<swiper ref="mySwiper5" :options="swiperOptions" class="wow fadeIn">
 						    <swiper-slide v-for="resImg in resImgs" class="text-center">
-						    	<img :src="resImg.img" class="serv-image">
+						    	<img :src="resImg" class="serv-image">
 						    </swiper-slide>
 	  					</swiper>
 	  						<div class="mynav">

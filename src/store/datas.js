@@ -1,8 +1,12 @@
+import axios from 'axios'
+
+
 export default{
 	state: {
 		mainTel: '+4234-222-23-23',
 		mainEmail: 'hello@strsmedia.com',
 		mainModal: false,
+    team:[],
     pageContacts: [
           {
             title: 'TELEPHONE',
@@ -27,12 +31,25 @@ export default{
 	mutations: {
 		setModal(state, notModal){
 			state.mainModal = notModal
-		}
+		},
+    SET_TEAM(state, team){
+      state.team = team
+    }
 	},
   	actions: {
   		setModal({commit}, payload){
-			commit('setModal', payload)
-		}
+			   commit('setModal', payload)
+		  },
+      loadTeam({commit}){
+      axios
+        .get('https://stars.webink.site/wp-json/wp/v2/team')
+        .then(data =>{
+          console.log(data.data)
+          let team = data.data
+          commit('SET_TEAM', team)
+        })
+        .catch(error => console.log(error))
+    }
   	},
   	getters: {
   		getTel(state){
@@ -46,6 +63,9 @@ export default{
   		},
       getConatacts(state){
         return state.pageContacts
+      },
+      getTeam(state){
+        return state.team
       }
   	}
 }

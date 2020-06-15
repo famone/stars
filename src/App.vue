@@ -17,12 +17,11 @@
     <router-view></router-view>
 </vue-page-transition>
 
-<p v-for="(post, index) in posts" :key="index">{{ post }}</p>
+
 
 
 
       <appFooter></appFooter>
-
 
 
 
@@ -39,7 +38,7 @@ import Preloader from './components/Preloader.vue'
 import Modal from './components/Modal.vue'
 import baffle from 'baffle';
 
-import { mapState } from 'vuex'
+
 
 export default {
  
@@ -49,9 +48,7 @@ export default {
     'appPrld': Preloader,
     'appModal': Modal
   },
-  computed: {
-        ...mapState(['posts'])
-  },
+
   data(){
     return {
       progressBar: 0,
@@ -99,7 +96,6 @@ export default {
     })
     this.startInterval()
     this.disablePreloader()
-    
     this.$store.dispatch('loadCases')
   }
 }

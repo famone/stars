@@ -12,10 +12,10 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 wow fadeInUp employee text-center" v-for="employee in employees">
-					<img :src="employee.img" class="team-member">
-					<h4>{{ employee.name }}</h4>
-					<p class="pos">{{ employee.position }}</p>
+		<div class="col-lg-4 wow fadeInUp employee text-center" v-for="employee in this.$store.getters.getTeam">
+					<img :src="employee.images.large" class="team-member">
+					<h4>{{ employee.title.rendered }}</h4>
+					<p class="pos">{{ employee.content.rendered }}</p>
 				</div>
 			</div>
 		</div>
@@ -24,41 +24,8 @@
 
 <script>
 	export default{
-		data(){
-			return{
-				employees: [
-					{
-						img: require('../assets/img/zak.png'),
-						name: 'Zak Selyavin',
-						position: 'Filmmaker'
-					},
-					{
-						img: require('../assets/img/zak.png'),
-						name: 'Zak Selyavin',
-						position: 'Filmmaker'
-					},
-					{
-						img: require('../assets/img/zak.png'),
-						name: 'Zak Selyavin',
-						position: 'Filmmaker'
-					},
-					{
-						img: require('../assets/img/zak.png'),
-						name: 'Zak Selyavin',
-						position: 'Filmmaker'
-					},
-					{
-						img: require('../assets/img/zak.png'),
-						name: 'Zak Selyavin',
-						position: 'Filmmaker'
-					},
-					{
-						img: require('../assets/img/zak.png'),
-						name: 'Zak Selyavin',
-						position: 'Filmmaker'
-					}
-				]
-			}
+		created(){
+			this.$store.dispatch('loadTeam')
 		}
 	}
 </script>

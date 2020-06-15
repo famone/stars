@@ -3,101 +3,7 @@ import axios from 'axios'
 
 export default{
 	state: {
-		cases: [
-					{
-						link: 'kings',
-						sphere: 'CASINO',
-						name: 'King’s Resort',
-						descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
-						hashTags: ['Live streaming'],
-						image: require('../assets/img/kingcase.png'),
-						logo: require('../assets/img/kingslogo.svg'),
-						background: require('../assets/img/kingcase.png'),
-						mainTask: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet, fugit nostrum sapiente quidem alias tenetur, blanditiis. Nulla impedit sit necessitatibus, asperiores repudiandae, culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta',
-						shades: require('../assets/img/kingsshades.svg'),
-						involvedItems: ['Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing'],
-						results: ['Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing'],
-						resultsImg: [
-							{
-								img: require('../assets/img/entrtask.jpg')
-							},
-							{
-								img: require('../assets/img/entrtask.jpg')
-							}	
-						],
-						bigcase: require('../assets/img/bigcaseimg.jpg'),
-						id: 1
-
-					},
-					{
-						link: 'entropiq',
-						sphere: 'CYBER TEAM',
-						name: 'Entropiq',
-						descr: 'Lorem ipsum dollor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
-						hashTags: ['Marketing', 'Video making'],
-						image: require('../assets/img/entropiqcase.png'),
-						logo: require('../assets/img/entrologo.svg'),
-						background: require('../assets/img/entrbgbig.jpg'),
-						mainTask: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet, fugit nostrum sapiente quidem alias tenetur, blanditiis. Nulla impedit sit necessitatibus, asperiores repudiandae, culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta',
-						shades: require('../assets/img/entrshades.svg'),
-						involvedItems: ['Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing'],
-						results: ['Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing'],
-						resultsImg: [
-							{
-								img: require('../assets/img/entrtask.jpg')
-							},
-							{
-								img: require('../assets/img/entrtask.jpg')
-							}
-						],
-						bigcase: require('../assets/img/bigcaseimg.jpg'),
-						id: 2
-
-					},
-					{
-						link: 'pokerstars',
-						sphere: 'TOURNAMENT',
-						name: 'Poker Star’s',
-						descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet.amet, consectetur adipisicing elit.',
-						hashTags: ['Marketing', 'Live streaming'],
-						image: require('../assets/img/pscase.png'),
-						logo: require('../assets/img/pslogo.svg'),
-						background: require('../assets/img/pscase.png'),
-						mainTask: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet, fugit nostrum sapiente quidem alias tenetur, blanditiis. Nulla impedit sit necessitatibus, asperiores repudiandae, culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta',
-						shades: require('../assets/img/psshades.svg'),
-						involvedItems: ['Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing'],
-						results: ['Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing',
-						'Lorem ipsum dolor sit amet, consectetur adipisicing'],
-						resultsImg: [
-							{
-								img: require('../assets/img/entrtask.jpg')
-							},
-							{
-								img: require('../assets/img/entrtask.jpg')
-							}
-						],
-						bigcase: require('../assets/img/bigcaseimg.jpg'),
-						id: 3
-
-					}
-				],
+		
 				filterBtns: [
 					{
 						name: 'All',
@@ -127,8 +33,8 @@ export default{
 		setFiltered(state, filteredParam){
 			state.filteredParam = filteredParam
 		},
-		SET_POSTS(state, data){
-			state.posts = data
+		SET_POSTS(state, posts){
+			state.posts = posts
 		}
 	},
   	actions: {
@@ -138,18 +44,16 @@ export default{
 		loadCases({commit}){
 			axios
 				.get('https://stars.webink.site/wp-json/wp/v2/portfolio')
-				.then(res =>{
-					console.log(res.data)
-					
-					commit('SET_POSTS', res.data)
+				.then(data =>{
+					console.log(data.data)
+					let posts = data.data
+					commit('SET_POSTS', posts)
 				})
 				.catch(error => console.log(error))
 		}
   	},
   	getters: {
-  		getCases(state){
-  			return state.cases
-  		},
+
   		getFiltered(state){
   			return state.filteredParam
   		},
@@ -157,7 +61,10 @@ export default{
   			return state.filterBtns
   		},
   		getCaseitem: (state) => (id) => {
-  			return state.cases.find(caseItem => caseItem.link == id)
+  			return state.posts.find(caseItem => caseItem.slug == id)
+  		},
+  		getPosts(state){
+  			return state.posts
   		}
   	}
 }

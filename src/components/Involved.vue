@@ -10,7 +10,7 @@
 				<div class="col-lg-12">
 					<div class="overhidden">
 							<div class="what-do wow fadeInDown">
-								<p v-for="inv in involved"><img :src="smalllight" alt="">{{ inv }}</p>
+								<p v-for="inv in involved"><img :src="inv.icon.url" alt="">{{ inv.name }}</p>
 							</div>
 						</div>
 				</div>

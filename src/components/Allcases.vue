@@ -2,24 +2,25 @@
 		<section id="cases">
 			<div class="container">
 				<div class="row case-row">
-					<div class="col-lg-4 col-sm-6 col-md-6" v-for="caseItem in cases" v-if="caseItem.hashTags.includes(changeFilter) || changeFilter == 'All' ">
-					<router-link tag="a" :to="/cases/ + caseItem.link">
+					<!-- v-if="caseItem.hashTags.slug.strtolower.includes(changeFilter) || changeFilter == 'All' " -->
+					<div class="col-lg-4 col-sm-6 col-md-6" v-for="caseItem in this.$store.getters.getPosts" v-if="caseItem.hashTags.includes(changeFilter) || changeFilter == 'All' ">
+					<router-link tag="a" :to="/cases/ + caseItem.slug">
 						<div class="case-over" v-tilt="{speed: 1000, perspective: 1200}">
 							<div class="case-card" >
 								<div class="case-img"
-								 :style="{'background-image': 'url(' + caseItem.image + ')'}">
-								 <img :src="caseItem.logo" class="logo-case fadeIn">
+								 :style="{'background-image': 'url(' + caseItem.images.large + ')'}">
+								 <img :src="caseItem.acf.logo.url" class="logo-case fadeIn">
 								</div>
 							</div>
 						</div>
 					</router-link>	
 						
-						<router-link tag="a" :to="/cases/ + caseItem.link">
-							<h3>{{ caseItem.name }}</h3>
+						<router-link tag="a" :to="/cases/ + caseItem.slug">
+							<h3>{{ caseItem.title.rendered }}</h3>
 						</router-link>	
 
 						<div class="hastags">
-							<div class="hash" v-for="hash in caseItem.hashTags"><span>#</span>{{ hash }}</div>
+							<div class="hash" v-for="hash in caseItem.cats"><span>#</span>{{ hash.name }}</div>
 						</div>
 					</div>
 				</div>
@@ -37,13 +38,13 @@
 		},
 		computed: {
 			changeFilter(){
-				this.n = this.$store.getters.getFiltered 
+				this.n = this.$store.getters.getFiltered
 
 				return this.n
 			}
 		},
 		created(){
-			this.cases = this.$store.getters.getCases
+			this.cases = this.$store.getters.getPosts
 		}
 	}
 </script>
