@@ -9,7 +9,7 @@
 			</div>
 			<form class="form-row overhidden">
 					<div class="col-lg-4 wow fadeInUp">
-						<input type="text" placeholder="What is your name" v-model="emailBody.yname">
+						<input type="text" autocomplete="off" placeholder="What is your name" v-model="emailBody.yname">
 					</div>
 					<div class="col-lg-4 wow fadeInUp">
 						<input type="text" placeholder="+7 999 222-22-22" v-model="emailBody.phone">
