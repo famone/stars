@@ -75,10 +75,10 @@ import axios from 'axios'
 				telephone: null,
 				email: null,
 				emailBody: {
-					yname: '123',
-					phone: '123',
-					email: 'asda@mail.ru',
-					services: 'l;m;evlmw'
+					yname: '',
+					phone: '',
+					email: '',
+					services: ''
 				},
 				errors: [],
             	url: 'https://stars.webink.site/wp-json/contact-form-7/v1/contact-forms/43/feedback'
@@ -88,16 +88,10 @@ import axios from 'axios'
         submitForm() {
         	var form1 = new FormData();
         	
-        		form1.append('file', this.emailBody);
-			  // for(var pair of formData.entries()) {
-			  //   console.log(pair[0]+ ', '+ pair[1]); 
-			  //  }
 
- 
-
-			// for (field in this.emailBody){
-			// 	form1.append(field, this.emailBody[field]);
-			// };
+			for (var field in this.emailBody){
+				form1.append(field, this.emailBody[field]);
+			};
 
             axios
             	.post(this.url, form1)
