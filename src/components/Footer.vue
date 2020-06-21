@@ -81,7 +81,7 @@ import axios from 'axios'
 					services: ''
 				},
 				errors: [],
-            	url: 'https://stars.webink.site/wp-json/contact-form-7/v1/contact-forms/43/feedback'
+            	url: 'https://stars-media.cz/wp-json/contact-form-7/v1/contact-forms/43/feedback'
 			}
 		},
 		methods: {

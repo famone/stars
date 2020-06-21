@@ -42,7 +42,7 @@ export default{
 		  },
       loadTeam({commit}){
       axios
-        .get('https://stars.webink.site/wp-json/wp/v2/team')
+        .get('https://stars-media.cz/wp-json/wp/v2/team')
         .then(data =>{
           console.log(data.data)
           let team = data.data

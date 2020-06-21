@@ -43,7 +43,7 @@ export default{
 		},
 		loadCases({commit}){
 			axios
-				.get('https://stars.webink.site/wp-json/wp/v2/portfolio')
+				.get('https://stars-media.cz/wp-json/wp/v2/portfolio')
 				.then(data =>{
 					console.log(data.data)
 					let posts = data.data

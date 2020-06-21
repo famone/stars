@@ -3,7 +3,7 @@
          <div class="blackorion"></div>
         <div class="bgvideo d-none d-sm-block">
               <video autoplay muted loop id="myVideo">
-                <source src="http://stars.webink.site/IMG_1925.mp4" type="video/mp4">
+                <source src="https://stars-media.cz/IMG_1925.mp4" type="video/mp4">
               </video>
           </div>
       <div class="container">
