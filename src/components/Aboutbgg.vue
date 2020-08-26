@@ -12,13 +12,10 @@
             </div>
             <div class="overhidden">
               <p class="black-txt wow fadeInDown">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet, fugit nostrum sapiente quidem alias tenetur, blanditiis. Nulla impedit sit necessitatibus, asperiores repudiandae, culpa.
-              <br><br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta 
-				<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet, fugit nostrum sapiente quidem alias tenetur, blanditiis. Nulla impedit sit necessitatibus, asperiores repudiandae, culpa.
-				<br><br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta 
+              We are a young team of passionate marketers 
+            creators placing your needs at the center of all our work. 
+<br><br>
+Driven to understand your brand, your goals and your customers, we will offer you unique solutions and deliver them to mesmerize your audience.
             </p>
             </div>
 				</div>
