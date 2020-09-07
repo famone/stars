@@ -13,11 +13,8 @@
               <h2 class="wow fadeInDown">We are <span class="violetter">Stars</span></h2>
             </div>
             <div class="overhidden">
-              <p class="black-txt wow fadeInDown">
-              We are a young team of passionate marketers 
-            creators placing your needs at the center of all our work. 
-<br><br>
-Driven to understand your brand, your goals and your customers, we will offer you unique solutions and deliver them to mesmerize your audience.
+              <p class="black-txt wow fadeInDown" v-html="about.content.rendered">
+
             </p>
             </div>
             <router-link tag="a" to="/about">
@@ -28,6 +25,16 @@ Driven to understand your brand, your goals and your customers, we will offer yo
       </div>
     </section>
 </template>
+
+<script>
+import {mapState} from 'vuex'
+
+export default{
+  computed: {
+      ...mapState('datas', ['about']),
+    }
+}
+</script>
 
 <style scoped>
   #about{

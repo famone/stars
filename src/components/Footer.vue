@@ -80,7 +80,7 @@ import {mapState} from 'vuex'
 					email: '',
 					services: ''
 				},
-				errors: [],
+				errors: '',
             	url: 'https://stars-media.cz/wp-json/contact-form-7/v1/contact-forms/43/feedback'
 			}
 		},
@@ -97,7 +97,7 @@ import {mapState} from 'vuex'
             	.post(this.url, form1)
                 .then((response) => {
                     console.log(response);
-                    this.errors = [];
+                    this.errors = response.data;
                 })
                 .catch((error) => {
                     this.errors = error.response.data.message

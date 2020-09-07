@@ -15,11 +15,11 @@
 				<span></span>
 			</div>
 			<div class="row icons">
-				<div class="col-lg-3" v-for="improve in improves">
+				<div class="col-lg-3" v-for="improve in about.acf.how_can_we">
 					<div class="icon-circle">
-						<img :src="improve.icon" alt="">
+						<img :src="improve.ikonka.url" alt="">
 					</div>
-					<p class="white-txt">{{ improve.title }}</p>
+					<p class="white-txt">{{ improve.tekst }}</p>
 				</div>
 			</div>
 		</div>
@@ -27,28 +27,10 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 	export default{
-		data(){
-			return{
-				improves:[
-					{
-						icon: require('../assets/img/ic3.svg'),
-						title: 'We know how hard it can be to work with graphical designers'
-					},
-					{
-						icon: require('../assets/img/ic3.svg'),
-						title: 'We know how hard it can be to work with graphical designers'
-					},
-					{
-						icon: require('../assets/img/ic3.svg'),
-						title: 'We know how hard it can be to work with graphical designers'
-					},
-					{
-						icon: require('../assets/img/ic3.svg'),
-						title: 'We know how hard it can be to work with graphical designers'
-					}
-				]
-			}
+		computed: {
+			...mapState('datas', ['about']),
 		},
 		mounted(){
 			const scene5 = this.$scrollmagic.scene({

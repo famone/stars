@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<div class="row">
-		<div class="col-lg-4 wow fadeInUp employee text-center" v-for="employee in this.$store.getters.getTeam">
+		<div class="col-lg-4 wow fadeInUp employee text-center" v-for="employee in team">
 					<img :src="employee.images.large" class="team-member">
 					<h4>{{ employee.title.rendered }}</h4>
 					<p class="pos">{{ employee.content.rendered }}</p>
@@ -23,9 +23,10 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 	export default{
-		created(){
-			this.$store.dispatch('loadTeam')
+		computed: {
+			...mapState('datas', ['team']),
 		}
 	}
 </script>

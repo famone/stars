@@ -8,8 +8,8 @@
 			</div>
 			<div class="row">
 				<swiper ref="mySwiper" :options="swiperOptions" class="slider">
-				    <swiper-slide v-for="slide in mySlides" class="text-center">
-				    	<img :src="slide.img" class="backstage-img">
+				    <swiper-slide v-for="slide in about.acf.bekstejdzh" class="text-center">
+				    	<img :src="slide" class="backstage-img">
 				    </swiper-slide>
 				
 				     <div class="swiper-button-prev" slot="button-prev"></div>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
 		data(){
 		return {
@@ -74,9 +76,7 @@
 	  		}
 		},
 		computed: {
-	  		swiper(){
-	        	return this.$refs.mySwiper.$swiper
-	    	}
+	  		...mapState('datas', ['about']),
 		},
 		mounted() {
 		  this.swiper.slideTo(3, 1000, false)

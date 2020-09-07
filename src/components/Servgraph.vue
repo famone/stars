@@ -19,7 +19,7 @@
 
 					<div class="col-lg-7 order-lg-1">
 						<div class="overhidden">
-							<h2 class="wow fadeInDown">Perfomance marketing</h2>
+							<h2 class="wow fadeInDown">Вторая</h2>
 						</div>
 						<div class="overhidden">
 							<p class="black-txt wow fadeInDown">
@@ -85,14 +85,14 @@
 			      },
 			}
 		},
-		computed: {
-	  		swiper(){
-	        	return this.$refs.mySwiper3.$swiper
-	    	}
-		},
-		mounted() {
-		  this.swiper.slideTo(3, 1000, false)
-		}
+		// computed: {
+	 //  		swiper(){
+	 //        	return this.$refs.mySwiper3.$swiper
+	 //    	}
+		// },
+		// mounted() {
+		//   this.swiper.slideTo(3, 1000, false)
+		// }
 	}
 </script>
 

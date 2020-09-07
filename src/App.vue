@@ -98,7 +98,9 @@ export default {
     this.disablePreloader()
     this.$store.dispatch('cases/loadCases')
     this.$store.dispatch('datas/loadTeam')
+    this.$store.dispatch('datas/loadAbout')
     this.$store.dispatch('cases/loadServ')
+    this.$store.dispatch('cases/loadPartners')
   }
 }
 </script>

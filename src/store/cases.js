@@ -29,7 +29,8 @@ const cases = {
 				],
 				filteredParam: 'All',
 				posts: [],
-				servicesAll: []
+				servicesAll: [],
+				partn: []
 	},
 	mutations: {
 		setFiltered(state, filteredParam){
@@ -40,6 +41,9 @@ const cases = {
 		},
 		SET_SERV(state, servs){
 			state.servicesAll = servs
+		},
+		SET_PARTN(state, partn){
+			state.partn = partn
 		}
 	},
   	actions: {
@@ -51,7 +55,6 @@ const cases = {
 				.get('https://stars-media.cz/wp-json/wp/v2/portfolio')
 				.then(data =>{
 					let posts = data.data
-						console.log(data.data)
 					commit('SET_POSTS', posts)
 				})
 				.catch(error => console.log(error))
@@ -61,7 +64,18 @@ const cases = {
 				.get('https://stars-media.cz/wp-json/wp/v2/services')
 				.then(data =>{
 					let servs = data.data
+					console.log(servs)
 					commit('SET_SERV', servs)
+				})
+				.catch(error => console.log(error))
+		},
+		loadPartners({commit}){
+			axios
+				.get('https://stars-media.cz/wp-json/wp/v2/partners')
+				.then(data =>{
+					let partn = data.data
+					console.log(partn)
+					commit('SET_PARTN', partn)
 				})
 				.catch(error => console.log(error))
 		}

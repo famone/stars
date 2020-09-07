@@ -4,15 +4,17 @@
 				<div class="row">
 
 					<div class="col-lg-5">
-						<swiper ref="mySwiper2" :options="swiperOptions" class="slider2 wow fadeIn">
+						<!-- <swiper ref="mySwiper2" :options="swiperOptions" class="slider2 wow fadeIn">
 						    <swiper-slide v-for="servIm in servImg" class="text-center">
 						    	<img :src="servIm.img" class="serv-image">
 						    </swiper-slide>
-	  					</swiper>
-	  						<div class="mynav">
+	  					</swiper> -->
+	  				<!-- 	:style="{'background-image': 'url(' + service.acf.zadnij_fon.url + ')'}" -->
+	  					<div class="img-serv"></div>
+	  						<!-- <div class="mynav">
 	  							<div class="swiper-button-prev" slot="button-prev"></div>
 								<div class="swiper-button-next" slot="button-next"></div>
-	  						</div>
+	  						</div> -->
 	  					 <div class="examples text-right">
 	  					 	<button class="main-btn"><span>SEE EXAMPLES</span></button>
 	  					 </div>
@@ -24,9 +26,7 @@
 						</div>
 						<div class="overhidden">
 							<p class="black-txt wow fadeInDown">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta architecto eveniet, fugit nostrum sapiente quidem alias tenetur, blanditiis. Nulla impedit sit necessitatibus, asperiores repudiandae, culpa.
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae recusandae necessitatibus itaque officiis dicta 
+							
 							</p>
 						</div>
 						<hr>
@@ -46,58 +46,27 @@
 
 <script>
 	export default{
-		data(){
-			return{
-				smalllight: require('../assets/img/smalllight.svg'),
-				whatDos: [
-					{
-						title: 'Cool video billboards'
-					},
-					{
-						title: 'Cool video billboards'
-					},
-					{
-						title: 'Cool video billboards'
-					},
-					{
-						title: 'Cool video billboards'
-					},
-					{
-						title: 'Cool video billboards'
-					},
-					{
-						title: 'Cool video billboards'
-					}
-				],
-				servImg: [
-					{
-						img: require('../assets/img/servperf1.jpg')
-					}
-				],
-				swiperOptions: {
-			        slidesPerView: 1,
-			      spaceBetween: 0,
-			      draggable: true,
-			      loop: true,
-			          navigation: {
-			            nextEl: '.swiper-button-next',
-			            prevEl: '.swiper-button-prev',
-			          }
-			      },
-			}
-		},
-		computed: {
-	  		swiper(){
-	        	return this.$refs.mySwiper2.$swiper
-	    	}
-		},
-		mounted() {
-		  this.swiper.slideTo(3, 1000, false)
-		}
+		props: [''],
+		// computed: {
+	 //  		swiper(){
+	 //        	return this.$refs.mySwiper2.$swiper
+	 //    	}
+		// },
+		// mounted() {
+		//   this.swiper.slideTo(3, 1000, false)
+		// }
 	}
 </script>
 
 <style scoped>
+.img-serv{
+	height: 620px;
+	width: 100%;
+	border-radius: 8px;
+	background-color: #000;
+	position: relative;
+}
+
 .main-btn{
 	padding: 15px 40px;
 }

@@ -10,8 +10,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 text-center" v-for="partner in partners">
-					<img :src="partner.img" class="partn-logo">
+				<div class="col-lg-3 text-center" v-for="partner in partn">
+					<img :src="partner.images.medium" class="partn-logo">
 				</div>
 			</div>
 		</div>
@@ -19,36 +19,11 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
-		data(){
-			return{
-				partners: [
-					{
-						img: require('../assets/img/partner1.svg'),
-					},
-					{
-						img: require('../assets/img/partner2.svg'),
-					},
-					{
-						img: require('../assets/img/partner1.svg'),
-					},
-					{
-						img: require('../assets/img/partner2.svg'),
-					},
-					{
-						img: require('../assets/img/partner1.svg'),
-					},
-					{
-						img: require('../assets/img/partner2.svg'),
-					},
-					{
-						img: require('../assets/img/partner1.svg'),
-					},
-					{
-						img: require('../assets/img/partner2.svg'),
-					},
-				]
-			}
+		computed: {
+			...mapState('cases', ['partn']),
 		}
 	}
 </script>

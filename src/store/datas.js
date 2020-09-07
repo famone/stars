@@ -4,6 +4,7 @@ import axios from 'axios'
 const datas = {
   namespaced: true,
   state: {
+    about: null,
     mainTel: '+4234-222-23-23',
     mainEmail: 'hello@strsmedia.com',
     mainModal: false,
@@ -35,6 +36,9 @@ const datas = {
     },
     SET_TEAM(state, team){
       state.team = team
+    },
+    SET_ABOUT(state, about){
+      state.about = about
     }
   },
     actions: {
@@ -47,6 +51,16 @@ const datas = {
         .then(data =>{
           let team = data.data
           commit('SET_TEAM', team)
+        })
+        .catch(error => console.log(error))
+      },
+      loadAbout({commit}){
+        axios
+        .get('https://stars-media.cz/wp-json/wp/v2/pages/53')
+        .then(data =>{
+          let about = data.data
+          console.log(about)
+          commit('SET_ABOUT', about)
         })
         .catch(error => console.log(error))
       }
