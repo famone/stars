@@ -1,5 +1,5 @@
 <template>
-	<div class="pop" :class="{acPop: modalComp}">
+	<div class="pop" :class="{acPop: mainModal}">
 		<div class="close-pop" @click="hideModal()">✕</div>
 		<div class="pop-box row">
 			<div class="col-lg-4">
@@ -26,15 +26,16 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
+		
 		computed: {
-			modalComp(){
-				return this.$store.getters.getModal
-			} 
+			...mapState('datas', ['mainModal']),
 		},
 		methods: {
 			hideModal(){
-				this.$store.dispatch('setModal', false)
+				this.$store.dispatch('datas/setModal', false)
 			}
 		}
 	}

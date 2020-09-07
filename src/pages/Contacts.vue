@@ -9,7 +9,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4" v-for="contact in contacts">
+				<div class="col-lg-4" v-for="contact in pageContacts">
 					<div class="contact-box text-center">
 						<div class="icon-circle">
 							<img :src="contact.icon" alt="">
@@ -25,19 +25,15 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import Particles from '../components/Particles.vue'
+
 	export default{
 		components: {
 			'appParticles': Particles
 		},
-		data(){
-			return{
-				contacts: null
-			}
-		},
-		mounted(){
-			this.contacts = this.$store.getters.getConatacts
-			console.log(this.contacts)
+		computed: {
+			...mapState('datas', ['pageContacts']),
 		}
 	}
 </script>

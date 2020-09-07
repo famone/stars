@@ -1,20 +1,21 @@
 <template>
 	<div>
+		<!-- <p>{{getCaseitem(itemSlug)}}</p> -->
 		<div id="scenecase">
-			<appCaseinner :caseTitle="caseItem.title.rendered"
-			:logo="caseItem.logo"
-			:caseBg="caseItem.acf.background"
-			:hashs="caseItem.hashTags"
-			:shades="caseItem.acf.shades.url"
-			:sphere="caseItem.acf.sphere"></appCaseinner>
+			<appCaseinner :caseTitle="getCaseitem(itemSlug).title.rendered"
+			:logo="getCaseitem(itemSlug).logo"
+			:caseBg="getCaseitem(itemSlug).acf.background"
+			:hashs="getCaseitem(itemSlug).hashTags"
+			:shades="getCaseitem(itemSlug).acf.shades.url"
+			:sphere="getCaseitem(itemSlug).acf.sphere"></appCaseinner>
 
-<appMaintask :maintask="caseItem.acf.mainTask"></appMaintask>
+<appMaintask :maintask="getCaseitem(itemSlug).acf.mainTask"></appMaintask>
 
 		</div>
-		<appInvolved :involved="caseItem.acf.services_and_processes_involved"></appInvolved>
-		<appResults :results="caseItem.acf.results"
-		:resImgs="caseItem.acf.resultsImg"
-		:bigcase="caseItem.acf.bigcase.url"></appResults>
+		<appInvolved :involved="getCaseitem(itemSlug).acf.services_and_processes_involved"></appInvolved>
+		<appResults :results="getCaseitem(itemSlug).acf.results"
+		:resImgs="getCaseitem(itemSlug).acf.resultsImg"
+		:bigcase="getCaseitem(itemSlug).acf.bigcase.url"></appResults>
 
 	</div>
 </template>
@@ -25,6 +26,9 @@ import Caseinner from '../components/Caseinner.vue'
 import Maintask from '../components/Maintask.vue'
 import Involved from '../components/Involved.vue'
 import Results from '../components/Results.vue'
+
+import {mapGetters} from 'vuex'
+import {mapState} from 'vuex'
 
 	export default{
 		components: {
@@ -37,18 +41,20 @@ import Results from '../components/Results.vue'
 		data(){
 			return{
 				pageBg: require('../assets/img/inner1.png'),
-				caseItem: []
+				itemSlug: ''
 			}
 		},
 		computed: {
+			...mapGetters('cases', ['getCaseitem']),
 			getRouteCase(){
 				return this.caseItem
 			}
 		},
 		created(){
+			this.itemSlug = this.$route.params.id
+			
 			let id = this.$route.params.id
-			 this.caseItem = this.$store.getters.getCaseitem(id)
-			console.log(this.$route.params.id)
+			
 		}
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-	    <section id="about">
+      <section id="about">
          <div class="blackorion"></div>
         <div class="bgvideo d-none d-sm-block">
               <video autoplay muted loop id="myVideo">

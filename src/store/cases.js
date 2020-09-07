@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 
-export default{
+const cases = {
+	namespaced: true,
 	state: {
 		
 				filterBtns: [
@@ -27,7 +28,8 @@ export default{
 					}
 				],
 				filteredParam: 'All',
-				posts: []
+				posts: [],
+				servicesAll: []
 	},
 	mutations: {
 		setFiltered(state, filteredParam){
@@ -35,6 +37,9 @@ export default{
 		},
 		SET_POSTS(state, posts){
 			state.posts = posts
+		},
+		SET_SERV(state, servs){
+			state.servicesAll = servs
 		}
 	},
   	actions: {
@@ -45,9 +50,18 @@ export default{
 			axios
 				.get('https://stars-media.cz/wp-json/wp/v2/portfolio')
 				.then(data =>{
-					console.log(data.data)
 					let posts = data.data
+						console.log(data.data)
 					commit('SET_POSTS', posts)
+				})
+				.catch(error => console.log(error))
+		},
+		loadServ({commit}){
+			axios
+				.get('https://stars-media.cz/wp-json/wp/v2/services')
+				.then(data =>{
+					let servs = data.data
+					commit('SET_SERV', servs)
 				})
 				.catch(error => console.log(error))
 		}
@@ -70,7 +84,7 @@ export default{
 }
 
 
-
+export default cases
 
 
 

@@ -41,8 +41,8 @@
 				</div>
 				<div class="col-lg-6 wow fadeInUp">
 					<div class="contacts">
-						<a :href="`mailto:${email}`"> <img src="../assets/img/mailic.svg">{{ email }}</a>
-						<a :href="`tel:${telephone}`"> <img src="../assets/img/telic.svg">{{ telephone }}</a>
+						<a :href="`mailto:${mainEmail}`"> <img src="../assets/img/mailic.svg">{{ mainEmail }}</a>
+						<a :href="`tel:${mainTel}`"> <img src="../assets/img/telic.svg">{{ mainTel }}</a>
 					</div>
 				</div>
 				<div class="col-lg-3 wow fadeInUp">
@@ -55,6 +55,8 @@
 
 <script>
 import axios from 'axios'
+import {mapState} from 'vuex'
+
 	export default{
 		data(){
 			return {
@@ -72,8 +74,6 @@ import axios from 'axios'
 						icon: require('../assets/img/vimeo.svg')
 					}
 				],
-				telephone: null,
-				email: null,
 				emailBody: {
 					yname: '',
 					phone: '',
@@ -104,10 +104,9 @@ import axios from 'axios'
                 });
         	}
     	},
-    	mounted(){
-			this.telephone = this.$store.getters.getTel
-			this.email = this.$store.getters.getMail
-		},
+		computed: {
+			...mapState('datas', ['mainTel', 'mainEmail']),
+		}
 	}
 </script>
 

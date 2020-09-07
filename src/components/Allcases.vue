@@ -2,8 +2,8 @@
 		<section id="cases">
 			<div class="container">
 				<div class="row case-row">
-					<!-- v-if="caseItem.hashTags.slug.strtolower.includes(changeFilter) || changeFilter == 'All' " -->
-					<div class="col-lg-4 col-sm-6 col-md-6" v-for="caseItem in this.$store.getters.getPosts" v-if="caseItem.hashTags.includes(changeFilter) || changeFilter == 'All' ">
+					<!-- v-if="caseItem.hashTags.includes(filteredParam) || filteredParam == 'All' " -->
+					<div class="col-lg-4 col-sm-6 col-md-6" v-for="caseItem in posts" v-if="caseItem.hashTags.includes(filteredParam) || filteredParam == 'All' ">
 					<router-link tag="a" :to="/cases/ + caseItem.slug">
 						<div class="case-over" v-tilt="{speed: 1000, perspective: 1200}">
 							<div class="case-card" >
@@ -29,22 +29,11 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				cases: null,
-				n: null
-			}
-		},
-		computed: {
-			changeFilter(){
-				this.n = this.$store.getters.getFiltered
+import {mapState} from 'vuex'
 
-				return this.n
-			}
-		},
-		created(){
-			this.cases = this.$store.getters.getPosts
+	export default{
+		computed: {
+			...mapState('cases', ['posts', 'filteredParam'])
 		}
 	}
 </script>

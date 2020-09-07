@@ -1,5 +1,5 @@
 <template>
-	<div>
+  <div>
    <nav>
      <div class="container">
        <div class="shapka">
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-	export default{
+  export default{
     data(){
       return{
         logoImg: require('../assets/img/newlogo.svg'),
@@ -79,7 +79,7 @@
         this.mobileMenu = !this.mobileMenu
       },
       showModal(){
-        this.$store.dispatch('setModal', true)
+        this.$store.dispatch('datas/setModal', true)
       }
     },
     mounted(){ 

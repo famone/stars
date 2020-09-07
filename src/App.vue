@@ -96,14 +96,16 @@ export default {
     })
     this.startInterval()
     this.disablePreloader()
-    this.$store.dispatch('loadCases')
+    this.$store.dispatch('cases/loadCases')
+    this.$store.dispatch('datas/loadTeam')
+    this.$store.dispatch('cases/loadServ')
   }
 }
 </script>
 
 <style>
 :root {
-  --overlay-bg: #050710;
+  --overlay-bg: #050711!important;
   --transition-duration: .2s;
 }
 </style>

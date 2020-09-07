@@ -17,12 +17,16 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
 		data(){
 			return{
-				filterBtns: null,
 				filterdParam: 'All'
 			}
+		},
+		computed: {
+			...mapState('cases', ['filterBtns'])
 		},
 		methods: {
 			activateBtn(id){
@@ -33,13 +37,9 @@
 
 					this.filterBtns[id].active = true
 					this.filterdParam = this.filterBtns[id].name
-					// передаем значение в стор
 
-					this.$store.dispatch('setFiltered', this.filterdParam)
+					this.$store.dispatch('cases/setFiltered', this.filterdParam)
 			}
-		},
-		created(){
-			this.filterBtns = this.$store.getters.getButtons
 		}
 	}
 </script>

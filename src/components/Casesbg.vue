@@ -9,7 +9,7 @@
 				</div>
 			</div>
 
-			<div class="row case-row" v-for="caseItem in this.$store.getters.getPosts.slice(0, 2)">
+			<div class="row case-row" v-for="caseItem in posts.slice(0, 2)">
 				<div class="col-lg-6">
 					<div class="case-over">
 						<div class="case-card wow" data-wow-delay=".2s">
@@ -38,12 +38,15 @@
 				</div>
 			</div>
 
+
 		</div>
 	
 	</section>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 	export default{
 		data(){
 			return{
@@ -66,9 +69,8 @@
 
 		    this.$scrollmagic.addScene(scene2)
 		},
-		created(){
-			this.cases = this.$store.getters.getPosts
-			console.log(this.cases)
+		computed: {
+			...mapState('cases', ['posts']),
 		}
 
 	}
