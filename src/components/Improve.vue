@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="overhidden">
-						<h2 class="wow fadeInUp">How we can improve your <br> buisness</h2>
+						<h2 class="wow fadeInUp">How we can improve your <br> business</h2>
 					</div>
 				</div>
 			</div>

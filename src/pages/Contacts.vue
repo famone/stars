@@ -9,7 +9,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4" v-for="contact in pageContacts">
+				<div class="col-lg-6" v-for="contact in pageContacts">
 					<div class="contact-box text-center">
 						<div class="icon-circle">
 							<img :src="contact.icon" alt="">

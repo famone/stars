@@ -22,12 +22,12 @@ const datas = {
             linkText: 'karapet@stars-ent.com',
             icon: require('../assets/img/mailic.svg')
           },
-          {
-            title: 'ADRESS',
-            link: 'https://www.google.ru/maps',
-            linkText: 'Prahf, CZ, Strasse 12-12',
-            icon: require('../assets/img/mapic.svg')
-          }
+          // {
+          //   title: 'ADRESS',
+          //   link: 'https://www.google.ru/maps',
+          //   linkText: 'Prahf, CZ, Strasse 12-12',
+          //   icon: require('../assets/img/mapic.svg')
+          // }
     ]
   },
   mutations: {
