@@ -5,21 +5,21 @@ const datas = {
   namespaced: true,
   state: {
     about: null,
-    mainTel: '+4234-222-23-23',
-    mainEmail: 'hello@strsmedia.com',
+    mainTel: '+420 776 685 999',
+    mainEmail: 'karapet@stars-ent.com',
     mainModal: false,
     team:[],
     pageContacts: [
           {
             title: 'TELEPHONE',
-            link: 'tel:+42342222323',
-            linkText: '+4234-222-23-23',
+            link: 'tel:+420776685999',
+            linkText: '+420 776 685 999',
             icon: require('../assets/img/telic.svg')
           },
           {
             title: 'EMAIL',
-            link: 'mailto:hello@strsmedia.com',
-            linkText: 'hello@strsmedia.com',
+            link: 'mailto:karapet@stars-ent.com',
+            linkText: 'karapet@stars-ent.com',
             icon: require('../assets/img/mailic.svg')
           },
           {
